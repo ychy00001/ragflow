@@ -29,3 +29,5 @@ Cargo.lock
 docker/ragflow-logs/
 /flask_session
 /logs
+/docker/ragflow
+/docker/service_conf.yaml

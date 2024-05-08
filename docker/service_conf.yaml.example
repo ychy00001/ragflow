@@ -21,7 +21,7 @@ redis:
   host: 'redis:6379'
 user_default_llm:
   factory: 'Tongyi-Qianwen'
-  api_key: 'sk-xxxxxxxxxxxxx'
+  api_key: 'sk-xxxxxx'
   base_url: ''
 oauth:
   github:
