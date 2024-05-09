@@ -123,6 +123,8 @@ def completion():
             return get_data_error_result(retmsg="Dialog not found!")
         del req["conversation_id"]
         del req["messages"]
+        # 只拿最新的message 忽略历史记录
+        msg = msg[-2:-1]
         ans = chat(dia, msg, **req)
         if not conv.reference:
             conv.reference = []
