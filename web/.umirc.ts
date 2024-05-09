@@ -10,6 +10,9 @@ export default defineConfig({
   publicPath: '/',
   esbuildMinifyIIFE: true,
   icons: {},
+  metas: [
+    { name: 'referrer', content: 'no-referrer' },
+  ],
   hash: true,
   favicons: ['/logo.svg'],
   clickToComponent: {},
