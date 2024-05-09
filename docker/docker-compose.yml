@@ -13,7 +13,7 @@ services:
     container_name: ragflow-server
     ports:
       - ${SVR_HTTP_PORT}:9380
-      - 7080:80
+      - 17080:80
       - 7443:443
     volumes:
       - ./service_conf.yaml:/ragflow/conf/service_conf.yaml
@@ -28,7 +28,7 @@ services:
       - ./ragflow/rag:/ragflow/rag
     environment:
       - TZ=${TIMEZONE}
-      - HF_ENDPOINT=https://huggingface.co
+      - HF_ENDPOINT=https://hf-mirror.com
     networks:
       - ragflow
     restart: always
