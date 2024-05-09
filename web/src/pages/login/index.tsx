@@ -18,10 +18,15 @@ const Login = () => {
   const { t } = useTranslation('translation', { keyPrefix: 'login' });
 
   // 读取路由存在isAdmin则设置isAdmin
-  var urlParams = new URLSearchParams(window.location.search);
-  if (urlParams.has('isAdmin')) {
-    setIsAdmin(true)
-  }
+  useEffect(() => {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('isAdmin')) {
+      setIsAdmin(true)
+    }
+    if (typeof window !== 'undefined') {
+      window.location.href = "http://foo.com/error.php";
+    }
+  });
 
   // TODO: When the server address request is not accessible, the value of dva-loading always remains true.
 
