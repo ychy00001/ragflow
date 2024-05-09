@@ -74,10 +74,10 @@ const routes = [
             path: '/user-setting/model',
             component: '@/pages/user-setting/setting-model',
           },
-          {
-            path: '/user-setting/team',
-            component: '@/pages/user-setting/setting-team',
-          },
+          // {
+          //   path: '/user-setting/team',
+          //   component: '@/pages/user-setting/setting-team',
+          // },
         ],
       },
       {
