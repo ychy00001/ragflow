@@ -124,7 +124,8 @@ def completion():
         del req["conversation_id"]
         del req["messages"]
         # 只拿最新的message 忽略历史记录
-        msg = msg[-2:-1]
+        if len(msg) > 1:
+            msg = msg[-1:]
         ans = chat(dia, msg, **req)
         if not conv.reference:
             conv.reference = []
