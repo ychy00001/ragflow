@@ -2,7 +2,7 @@ import { useLogin, useRegister } from '@/hooks/loginHooks';
 import { useOneNamespaceEffectsLoading } from '@/hooks/storeHooks';
 import { rsaPsw } from '@/utils';
 import { Button, Checkbox, Form, Input } from 'antd';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRouter } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Icon, useNavigate } from 'umi';
 import RightPanel from './right-panel';
@@ -11,10 +11,17 @@ import styles from './index.less';
 
 const Login = () => {
   const [title, setTitle] = useState('login');
+  const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
   const login = useLogin();
+  const router = useRouter();
   const register = useRegister();
   const { t } = useTranslation('translation', { keyPrefix: 'login' });
+
+  // 读取路由存在isAdmin=true则设置isAdmin
+  if(router.query.isAdmin == true){
+    setIsAdmin(true)
+  }
 
   // TODO: When the server address request is not accessible, the value of dva-loading always remains true.
 
@@ -125,7 +132,7 @@ const Login = () => {
               </Form.Item>
             )}
             <div>
-              {title === 'login' && (
+              {title === 'login' && isAdmin === true && (
                 <div>
                   {t('signInTip')}
                   <Button type="link" onClick={changeTitle}>

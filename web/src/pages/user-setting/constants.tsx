@@ -9,7 +9,7 @@ export const UserSettingIconMap = {
   [UserSettingRouteKey.Profile]: <ProfileIcon />,
   [UserSettingRouteKey.Password]: <PasswordIcon />,
   [UserSettingRouteKey.Model]: <ModelIcon />,
-  [UserSettingRouteKey.Team]: <TeamIcon />,
+  // [UserSettingRouteKey.Team]: <TeamIcon />,
   [UserSettingRouteKey.Logout]: <LogoutIcon />,
 };
 
