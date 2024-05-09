@@ -23,9 +23,6 @@ const Login = () => {
     if (urlParams.has('isAdmin')) {
       setIsAdmin(true)
     }
-    if (typeof window !== 'undefined') {
-      window.location.href = "http://foo.com/error.php";
-    }
   });
 
   // TODO: When the server address request is not accessible, the value of dva-loading always remains true.
