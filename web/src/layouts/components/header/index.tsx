@@ -57,7 +57,7 @@ const RagHeader = () => {
     >
       <Space size={12} onClick={handleLogoClick} className={styles.logoWrapper}>
         <Logo className={styles.appIcon}></Logo>
-        <span className={styles.appName}>RAGFlow</span>
+        <span className={styles.appName}>智能助理</span>
       </Space>
       <Space size={[0, 8]} wrap>
         <Radio.Group
