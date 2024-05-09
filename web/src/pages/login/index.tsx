@@ -2,7 +2,7 @@ import { useLogin, useRegister } from '@/hooks/loginHooks';
 import { useOneNamespaceEffectsLoading } from '@/hooks/storeHooks';
 import { rsaPsw } from '@/utils';
 import { Button, Checkbox, Form, Input } from 'antd';
-import { useEffect, useState, useRouter } from 'react';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Icon, useNavigate } from 'umi';
 import RightPanel from './right-panel';
@@ -14,12 +14,14 @@ const Login = () => {
   const [isAdmin, setIsAdmin] = useState(false);
   const navigate = useNavigate();
   const login = useLogin();
-  const router = useRouter();
   const register = useRegister();
   const { t } = useTranslation('translation', { keyPrefix: 'login' });
 
   // 读取路由存在isAdmin=true则设置isAdmin
-  if(router.query.isAdmin == true){
+  const search = window.location.search; // 获取 URL 中的查询字符串，如 "?foo=bar"
+  const params = new URLSearchParams(search); // 使用 URLSearchParams 解析查询字符串
+  const paramIsAdmin = params.get('isAdmin'); // 获取参数 "foo" 的值
+  if(paramIsAdmin){
     setIsAdmin(true)
   }
 
