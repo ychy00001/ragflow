@@ -104,7 +104,7 @@ const MessageItem = ({
                     <List.Item>
                       <Flex gap={'small'} align="center">
                         {fileThumbnail ? (
-                          <img src={fileThumbnail}></img>
+                          <img width={24} src={fileThumbnail}></img>
                         ) : (
                           <SvgIcon
                             name={`file-icon/${fileExtension}`}

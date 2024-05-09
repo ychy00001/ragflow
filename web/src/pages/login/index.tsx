@@ -17,11 +17,9 @@ const Login = () => {
   const register = useRegister();
   const { t } = useTranslation('translation', { keyPrefix: 'login' });
 
-  // 读取路由存在isAdmin=true则设置isAdmin
-  const search = window.location.search; // 获取 URL 中的查询字符串，如 "?foo=bar"
-  const params = new URLSearchParams(search); // 使用 URLSearchParams 解析查询字符串
-  const paramIsAdmin = params.get('isAdmin'); // 获取参数 "foo" 的值
-  if(paramIsAdmin){
+  // 读取路由存在isAdmin则设置isAdmin
+  var urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('isAdmin')) {
     setIsAdmin(true)
   }
 
